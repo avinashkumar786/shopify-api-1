@@ -1,5 +1,5 @@
 {
-  "name": "shopify-api",
+  "name": "shopify-api-1",
   "version": "0.0.2",
   "private": true,
   "main": "./lib/index.js",
