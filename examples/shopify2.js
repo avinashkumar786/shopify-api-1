@@ -193,7 +193,7 @@ var Shopify = function(req,res){
     shopify.parse.charges = function(data){
         var array = (typeof data.recurring_application_charge == "undefined") ? data.recurring_application_charges : data.recurring_application_charge;
         var s = {
-            "pending":false,
+            "pending":true,
             "active":false,
             "declined":false,
             "accepted":false,
@@ -208,15 +208,15 @@ var Shopify = function(req,res){
         return s;
     }
 
-    shopify.delegate.accepted_charge = function(data,callbacks){
-        var id = shopify.parse.charges(data).accepted.id;
-        var value = (typeof id == "undefined") ? false : id;
-        if(value){
-            callbacks.success(value);
-        }else{
-            callbacks.error();
-        }
-    }
+    // shopify.delegate.accepted_charge = function(data,callbacks){
+    //     var id = shopify.parse.charges(data).accepted.id;
+    //     var value = (typeof id == "undefined") ? false : id;
+    //     if(value){
+    //         callbacks.success(value);
+    //     }else{
+    //         callbacks.error();
+    //     }
+    // }
 
     shopify.request.activate_charge = function(id,callbacks){
         request({
