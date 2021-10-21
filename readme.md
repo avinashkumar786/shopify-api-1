@@ -1,4 +1,4 @@
-# Shopify-API
+# Shopify-API-1
 
 To reinstall it:
 
